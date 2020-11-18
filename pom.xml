@@ -6,7 +6,7 @@
 
   <groupId>org.Julio.Hernandez</groupId>
   <artifactId>Practica_Examen_java</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
 
   <name>Practica_Examen_java</name>
   <!-- FIXME change it to the project's website -->
@@ -51,6 +51,15 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <classpathPrefix>lib/</classpathPrefix>
+                <mainClass>org.Julio.Hernandez.App</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
