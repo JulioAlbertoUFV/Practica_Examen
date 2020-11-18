@@ -70,13 +70,13 @@ public class App
     }
 
     public static void leer_fichero(){
-        File file = new File("coches.xml");
+        File file = new File("concesionario.xml");
 
 
         String Id;
         String Marca;
         String Modelo;
-        int Cilindrada = 0;
+        String Cilindrada;
 
 
 
@@ -98,7 +98,7 @@ public class App
                     Id = eElement.getAttribute("id");
                     Marca = eElement.getElementsByTagName("marca").item(0).getTextContent();
                     Modelo = eElement.getElementsByTagName("modelo").item(0).getTextContent();
-                    Cilindrada = Integer.parseInt(eElement.getElementsByTagName("cilindrada").item(0).getTextContent());
+                    Cilindrada = eElement.getElementsByTagName("cilindrada").item(0).getTextContent();
 
                     Coche coche_temp = new Coche(Id,Marca,Modelo,Cilindrada);
                     Array_Coches.add(coche_temp);

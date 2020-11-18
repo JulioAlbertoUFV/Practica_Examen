@@ -5,13 +5,13 @@ public class Coche {
     String Id;
     String Marca;
     String Modelo;
-    int Cilindrada;
+    String Cilindrada;
 
     public Coche() {
 
     }
 
-    public Coche(String id, String marca, String modelo, int cilindrada) {
+    public Coche(String id, String marca, String modelo, String cilindrada) {
         Id = id;
         Marca = marca;
         Modelo = modelo;
@@ -34,11 +34,11 @@ public class Coche {
         Modelo = modelo;
     }
 
-    public int getCilindrada() {
+    public String getCilindrada() {
         return Cilindrada;
     }
 
-    public void setCilindrada(int cilindrada) {
+    public void setCilindrada(String cilindrada) {
         Cilindrada = cilindrada;
     }
 
