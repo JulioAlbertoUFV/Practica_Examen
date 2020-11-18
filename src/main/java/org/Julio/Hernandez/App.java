@@ -8,6 +8,7 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -57,6 +58,14 @@ public class App
 
     public static void leer_fichero(){
         File file = new File("coches.xml");
+        ArrayList<Coche> Array_Coches = new ArrayList<Coche>();
+
+        String Id;
+        String Marca;
+        String Modelo;
+        int Cilindrada = 0;
+
+
 
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -73,13 +82,10 @@ public class App
                 if(nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
 
-                    System.out.println("\nCoche id: " + eElement.getAttribute("id"));
-                    System.out.println("Marca: "
-                            + eElement.getElementsByTagName("marca").item(0).getTextContent());
-                    System.out.println("Modelo: "
-                            + eElement.getElementsByTagName("modelo").item(0).getTextContent());
-                    System.out.println("Cilindrada: "
-                            + eElement.getElementsByTagName("cilindrada").item(0).getTextContent());
+                    Id = eElement.getAttribute("id");
+                    Marca = eElement.getElementsByTagName("marca").item(0).getTextContent();
+                    Modelo = eElement.getElementsByTagName("modelo").item(0).getTextContent();
+                    Cilindrada = Integer.parseInt(eElement.getElementsByTagName("cilindrada").item(0).getTextContent());
                 }
             }
         } catch(Exception e) {
